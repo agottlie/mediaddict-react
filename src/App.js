@@ -242,7 +242,7 @@ class App extends Component {
     addMovie(event, movie) {
         event.preventDefault();
         $.ajax({
-            url: `https://api.themoviedb.org/3/movie/${movie.id}?api_key=5d8a82f4af8222c35db864c6cae30bc4`,
+            url: `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.TMDB_KEY}`,
         }).done((data) => {
             console.log(data.poster_path);
             let poster;

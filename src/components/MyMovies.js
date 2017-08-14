@@ -27,7 +27,7 @@ class MyMovies extends Component {
 	        }).done((data) => {
 	            let url = "https://api.nytimes.com/svc/movies/v2/reviews/search.json";
 				url += '?' + $.param({
-				    'api-key': "39e33badfa5f41b2a75fc660a36da0b9",
+				    'api-key': process.env.NYT_KEY,
 				    'query': this.props.currentMovie.name
 				});
 	            $.ajax({
