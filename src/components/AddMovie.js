@@ -6,8 +6,7 @@ class AddMovie extends Component {
 	handleMovieSubmit(event){
         event.preventDefault();
         $.ajax({
-            url: `https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_KEY}`,
-            data: { query: this.props.searchValue }
+            url: `${this.props.url}/movies/find?q=${this.props.searchValue}`
         }).done((data) => {
             this.props.updateQuery(data.results);
         });

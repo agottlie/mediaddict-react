@@ -242,26 +242,14 @@ class App extends Component {
     addMovie(event, movie) {
         event.preventDefault();
         $.ajax({
-            url: `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.TMDB_KEY}`,
+            url: `${this.state.url}/movies`,
+            method: "POST",
+            data: { user_id: this.state.user.id, movie: movie, generic_image: this.state.generic_image }
         }).done((data) => {
-            console.log(data.poster_path);
-            let poster;
-            if (data.poster_path) {
-                poster = "https://image.tmdb.org/t/p/w300/" + data.poster_path;
-            } else {
-                poster = this.state.generic_image;
-            }
-            console.log(poster);
-            $.ajax({
-                url: `${this.state.url}/movies`,
-                method: "POST",
-                data: { name: data.title, premiereDate: data.release_date, length: data.runtime, user_id: this.state.user.id, tmdb_id: data.id, image: poster }
-            }).done((data) => {
-                this.setState({
-                    display: "profile"
-                })
+            this.setState({
+                display: "profile"
             })
-        });
+        })
     }
 
     addShow(event) {

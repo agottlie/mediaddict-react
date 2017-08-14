@@ -121,6 +121,7 @@ class Display extends Component {
                     queryResult={this.props.queryResult}
                     addMovie={this.props.addMovie}
                     updateQuery={this.props.updateQuery}
+                    url={this.props.url}
                 />;
 
 //---------------------LEADERBOARD VIEW--------------------------------
