@@ -24,31 +24,17 @@ class MyMovies extends Component {
 	            url: `${this.props.url}/movies/${this.props.currentMovie.id}`,
 	            method: "PUT",
 	            data: {watched: true, score: this.props.user.score + 10, user_id: this.props.user.id}
-	        }).done((data) => {
-	            let url = "https://api.nytimes.com/svc/movies/v2/reviews/search.json";
-				url += '?' + $.param({
-				    'api-key': process.env.NYT_KEY,
-				    'query': this.props.currentMovie.name
-				});
-	            $.ajax({
-	                url: url,
-	                method: "GET"         
-	            }).done((data) => {
-	                if (data.results.length>0) {
-		                $.ajax({
-			                url: `${this.props.url}/movies/recap`,
-			                method: "PUT",
-			                data: {
-			                    id: this.props.currentMovie.id,
-			                    recap_url: data.results[0].link.url
-			                }
-			            }).done((data) => {
-				            this.props.setScore(10);
-				        })
-	                } else {
-	                	this.props.setScore(10);
+	        }).done((data) => {        
+                $.ajax({
+	                url: `${this.props.url}/movies/recap`,
+	                method: "PUT",
+	                data: {
+	                    id: this.props.currentMovie.id,
+	                    query: this.props.currentMovie.name
 	                }
-			    });
+	            }).done((data) => {
+		            this.props.setScore(10);
+		        })
 	        });
     	}	
 	}
@@ -73,7 +59,8 @@ class MyMovies extends Component {
                             media_id={this.props.currentMovie.tmdb_id}
                             user={this.props.user}
                             url={this.props.url}
-                            searchValue={this.props.searchValue}                                    handleNameChange={this.props.handleNameChange}
+                            searchValue={this.props.searchValue}
+                            handleNameChange={this.props.handleNameChange}
                             comments={this.props.comments}
                             current={this.props.currentMovie}
                             showComments={this.showComments.bind(this)}

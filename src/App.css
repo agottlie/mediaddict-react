@@ -1,3 +1,5 @@
+    /*GENERAL*/
+
 body {
     font-family: 'Fredericka the Great', cursive;
     background: linear-gradient(270deg, #f3f6f5, #a0a7a5);
@@ -5,6 +7,7 @@ body {
     -webkit-animation: AnimationName 30s ease infinite;
     -moz-animation: AnimationName 30s ease infinite;
     animation: AnimationName 30s ease infinite;
+    font-size: 1.5vw;
 }
 
 input {
@@ -20,6 +23,25 @@ ul {
 li {
     cursor: pointer;
 }
+
+.container {
+    padding: 10vh 1vw 0 1vw;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: lightgray;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+
+
+/*LOGIN AND SIGNUP PAGES*/
 
 .intro {
     height: 100vh;
@@ -56,6 +78,10 @@ li {
 .form-button {
     margin: 3px;
 }
+
+
+
+/*PROFILE PAGE*/
 
 .logo {
     background-image: url("./images/tv.png");
@@ -102,6 +128,9 @@ li {
 }
 
 
+
+/*NAVBAR*/
+
 .nav {
     position: fixed;
     height: 8vh;
@@ -113,6 +142,11 @@ li {
     justify-content: flex-end;
     z-index: 30;
     color: darkgoldenrod;
+    font-size: 1.5vw;
+}
+
+.nav>ul {
+    padding-right: 10px;
 }
 
 .nav>ul>li {
@@ -120,10 +154,19 @@ li {
     margin: 0 10px;
 }
 
-.container {
-    padding-top: 10vh;
+.points {
+    position: absolute;
+    left: 5vw;
 }
 
+.points-value {
+    margin-left: 5px;
+    color: white;
+}
+
+
+
+/*PROFILE PAGE*/
 
 .profile {
     display: flex;
@@ -141,6 +184,17 @@ li {
     width: 30vw;
 }
 
+.shows>h2,
+.movies>h2,
+#upcoming>h2 {
+    border-bottom: 1px solid black;
+}
+
+.shows,
+.movies {
+    box-shadow: 5px 5px 5px 5px #888888;
+}
+
 .upcoming {
     padding: 0 20px;
 }
@@ -148,17 +202,6 @@ li {
 .movieHeader,
 .showHeader {
     color: darkgoldenrod;
-}
-
-.list {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px 0;
-    border: 1px solid black;
-    padding: 5px;
-    background-color: lightgray;
-    box-shadow: 5px 5px 5px #888888;
 }
 
 .list>img {
@@ -170,18 +213,114 @@ li {
 #calendar {
     width: 100%;
     margin: auto;
+    font-size: 1vw;
 }
 
-.points {
-    position: absolute;
-    left: 5vw;
+#upcoming {
+    box-shadow: 5px 5px 5px 5px #888888;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 
-.points-value {
-    margin-left: 5px;
-    color: white;
+
+
+/*ADD SHOWS PAGES*/
+
+.show-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    margin: 0 auto;
 }
 
+.show-input-box {
+    margin: 0 10px;
+    height: 1.5vw;
+}
+
+.instructions {
+    text-align: justify;
+    font-size: 1.5vw;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    border: 1px solid black;
+    padding: 5px 25px;
+    background-color: lightgray;
+    box-shadow: 5px 5px 5px #888888;
+    width: 20vw;
+}
+
+.search-results>img {
+    height: 85px;
+    width: 60px;
+    margin-right: 20px;
+}
+
+
+/*EPISODES PAGE*/
+.episodepage-episode,
+.episodepage-season {
+    display: flex;
+    justify-content: space-between;
+}
+
+.episodepage-episode {
+    width: 85vw;
+    margin-left: 10vw;
+    margin-right: 0;
+    flex-direction: row;
+}
+
+.episodepage-episode>h3,
+.episodepage-episode>h5 {
+    margin: 0;
+}
+
+.episodepage-episode>h3 {
+    width: 60%;
+}
+
+.episodepage-season {
+    width: 10vw;
+    flex-direction: column;
+}
+
+.episodepage-season>h2,
+.season-complete>h5 {
+    margin: 0;
+    border-bottom: 1px solid black;
+}
+
+.season-complete>h5 {
+    margin: 5px 0;
+}
+
+.season-complete>input {
+    margin-left: 4vw;
+}
+
+.episode-complete>* {
+    display: inline;
+}
+
+.divider {
+    width: 100vw;
+    border-bottom: 1px solid black;
+    margin: 10px 0;
+}
+
+
+/*MY SHOWS PAGE*/
 .episodes {
     display: flex;
     align-items: row;
@@ -192,6 +331,54 @@ li {
     font-size: 12px;
     display: inline;
 }
+
+.episodes>div {
+    width: 32vw;
+}
+
+.episodes>div>h1 {
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.seasonHeader {
+    text-align: center;
+}
+
+.episode {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    border: 1px solid black;
+    padding: 0 10px;
+    background-color: lightgray;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.episode>div {
+    width: 33%;
+}
+
+.episode-title-numbers {
+    color: darkgoldenrod;
+}
+
+.aired,
+.recaps-and-comments,
+.complete {
+    text-align: center;
+}
+
+.complete>h4,
+.complete>h5 {
+    margin: 0;
+}
+
+
+
+/*COMMENTS*/
 
 .innerComment {
     position: relative;
@@ -222,6 +409,10 @@ li {
     cursor: pointer;
     padding: 2px;
 }
+
+
+
+/*KEYFRAMES*/
 
 @-webkit-keyframes AnimationName {
     0% {
@@ -256,5 +447,14 @@ li {
     }
     100% {
         background-position: 0% 50%
+    }
+}
+
+@media(max-width: 900px) {
+    .tv-img,
+    .movie-img {
+        height: 25px;
+        width: 38px;
+        margin: 0;
     }
 }

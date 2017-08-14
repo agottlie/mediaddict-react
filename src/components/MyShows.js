@@ -76,11 +76,19 @@ class MyShows extends Component {
                 if (episode.season === j && episode.watched) {
                     watchedCount++;
                     watched.push(
-                        <div key={i}>
-                            <h3 className="inline">Episode {episode.season}.{episode.episodenumber}: {episode.name}</h3>
-                            <h5 >Aired: {episode.airdate.substr(0, episode.airdate.length-6)}</h5>
-                            <a href={episode.recap_url}>Recap</a>
-                            <button onClick={(e) => {this.showComments(episode)}}>Show Comments</button>
+                        <div key={i} className="episode">
+                            <div className="episode-title">
+                                <h5 className="episode-title-numbers">Episode {episode.season}.{episode.episodenumber}:</h5>
+                                <h5>{episode.name}</h5>
+                            </div>
+                            <div className="aired">
+                                <h5>Aired:</h5>
+                                <h5>{episode.airdate.substr(0, episode.airdate.length-6)}</h5>
+                            </div>
+                            <div className="recaps-and-comments">
+                                <a href={episode.recap_url}>Recap</a>
+                                <button onClick={(e) => {this.showComments(episode)}}>Show Comments</button>
+                            </div>
                             <div 
                                 className="comment"
                                 id={"s" + episode.season + "e" + episode.episodenumber}
@@ -102,21 +110,36 @@ class MyShows extends Component {
                 } else if (episode.season === j && !episode.watched && d >= airdate) {
                     notWatchedCount++;
                     notWatched.push(
-                        <div key={i}>
-                            <h3 className="inline">Episode {episode.season}.{episode.episodenumber}: {episode.name}</h3>
-                            <input 
-                                type="checkbox"
-                                onClick={(e) => {this.updateWatched(i)}}
-                            />
-                            <h5 >Aired: {episode.airdate.substr(0, episode.airdate.length-6)}</h5>
+                        <div key={i} className="episode">
+                            <div className="episode-title">
+                                <h5 className="episode-title-numbers">Episode {episode.season}.{episode.episodenumber}:</h5>
+                                <h5>{episode.name}</h5>
+                            </div>
+                            <div className="aired">
+                                <h5>Aired:</h5>
+                                <h5>{episode.airdate.substr(0, episode.airdate.length-6)}</h5>
+                            </div>
+                            <div className="complete">
+                                <h4>Finished?</h4>
+                                <input 
+                                    type="checkbox"
+                                    onClick={(e) => {this.updateWatched(i)}}
+                                />
+                            </div>
                         </div>
                     );
                 } else if (episode.season === j) {
                     upcomingCount++;
                     upcoming.push(
-                        <div key={i}>
-                            <h3 className="inline">Episode {episode.season}.{episode.episodenumber}: {episode.name}</h3>
-                            <h5 >Aired: {episode.airdate.substr(0, episode.airdate.length-6)}</h5>
+                        <div key={i} className="episode">
+                            <div className="episode-title">
+                                <h5 className="episode-title-numbers">Episode {episode.season}.{episode.episodenumber}:</h5>
+                                <h5>{episode.name}</h5>
+                            </div>
+                            <div className="aired">
+                                <h5>Airing:</h5>
+                                <h5>{episode.airdate.substr(0, episode.airdate.length-6)}</h5>
+                            </div>
                         </div>
                     );
                 }
@@ -139,15 +162,15 @@ class MyShows extends Component {
                 <div className="episodes">
                     <div className="watched">
                         <h1>Watched</h1>
-                        <h3>{watched}</h3>
+                        <div>{watched}</div>
                     </div>
                     <div className="notWatched">
                         <h1>Not Watched</h1>
-                        <h3>{notWatched}</h3>
+                        <div>{notWatched}</div>
                     </div>
                     <div className="Upcoming">
                         <h1>Upcoming</h1>
-                        <h3>{upcoming}</h3>
+                        <div>{upcoming}</div>
                     </div>
                 </div>
                 {this.removeHeaders}

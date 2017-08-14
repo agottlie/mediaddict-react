@@ -387,6 +387,7 @@ class App extends Component {
                     delete={this.delete.bind(this)}
                     setComments={this.setComments.bind(this)}
                     comments={this.state.comments}
+                    generic_image={this.state.generic_image}
                 />
             </div>
             )

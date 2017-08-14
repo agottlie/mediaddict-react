@@ -99,6 +99,7 @@ class Display extends Component {
                     queryResult={this.props.queryResult}
                     updateQuery={this.props.updateQuery}
                     setShow={this.props.setShow}
+                    generic_image={this.props.generic_image}
                 />;
 
 //---------------------EPISODES VIEW--------------------------------
@@ -122,6 +123,7 @@ class Display extends Component {
                     addMovie={this.props.addMovie}
                     updateQuery={this.props.updateQuery}
                     url={this.props.url}
+                    generic_image={this.props.generic_image}
                 />;
 
 //---------------------LEADERBOARD VIEW--------------------------------

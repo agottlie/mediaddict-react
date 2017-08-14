@@ -182,8 +182,10 @@ class Profile extends Component {
               
                 <div className="upcoming">
                 	<div className="title">mediAddict</div>
-                    <h2>UPCOMING</h2>
-                	<div id="calendar"></div>
+                    <div id="upcoming">
+                        <h2>UPCOMING</h2>
+                    	<div id="calendar"></div>
+                    </div>
                 </div>
 
                 <div className="movies">

@@ -33,9 +33,10 @@ class Episodes extends Component {
 
         for (let j=1; j<=totalSeasons; j++) {
             episodeDisplay.push(
-                <div>
-                    <h2 className="inline">Season {j}</h2>
-                    <div onChange={(e) => {this.checkSeason(e, j)}}>
+                <div className="episodepage-season">
+                    <h2>Season {j}</h2>
+                    <div className="season-complete" onChange={(e) => {this.checkSeason(e, j)}}>
+                        <h5>Season Watched?</h5>
                         <input 
                             type="checkbox"
                             value={j}
@@ -47,19 +48,25 @@ class Episodes extends Component {
             this.props.episodeList.forEach((episode, i) => {
                 if (episode.season === j) {
                     episodeDisplay.push(
-                        <div key={i}>
-                            <h3 className="inline">Episode {episode.season}.{episode.number}: {episode.name}</h3>
-                            <input 
-                                type="checkbox"
-                                value={episode.id}
-                                id={episode.id}
-                                className={"season" + j}
-                                onClick={(e) => {this.updateCheck(i, episode.id)}}
-                            />
+                        <div className="episodepage-episode" key={i}>
+                            <h3>Episode {episode.season}.{episode.number}: {episode.name}</h3>
+                            <div className="episode-complete">
+                                <input 
+                                    type="checkbox"
+                                    value={episode.id}
+                                    id={episode.id}
+                                    className={"season" + j}
+                                    onClick={(e) => {this.updateCheck(i, episode.id)}}
+                                />
+                                <h5>Episode Watched?</h5>
+                            </div>
                             <h5 >Aired: {episode.airdate}</h5>
                         </div>);
                 }
             })
+            episodeDisplay.push(
+                <div className="divider"></div>
+            )
         }
 
         return(
