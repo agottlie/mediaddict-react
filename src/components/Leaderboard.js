@@ -8,11 +8,11 @@ class Leaderboard extends Component {
    	renderLeaderboard() {
    		return this.props.leaders.map((leader, i) => {
    			return(
-   				<li key={i}>
-   					<div>
+   				<li className="leader-row" key={i}>
+   					<div className="row-non-header">
    						{leader.name}
    					</div>
-   					<div>
+   					<div className="row-non-header">
    						{leader.score}
    					</div>
    				</li>
@@ -22,9 +22,21 @@ class Leaderboard extends Component {
 
 	render() {
 		return (
-	        <div>
-	        	{this.renderLeaderboard()}
-            </div>
+   	   <div>
+            <div className="main-title">mediAddict</div>
+            <div className="title">Leaderboard</div>
+            <ul className="leaderboard">
+   	        	  <li className="leader-row">
+                     <div className="row-header">
+                        Name
+                     </div>
+                     <div className="row-header">
+                        Score
+                     </div>
+                  </li>
+                 {this.renderLeaderboard()}
+            </ul>
+         </div>
 	    );
 	}
 }

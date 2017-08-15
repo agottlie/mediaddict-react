@@ -24,6 +24,10 @@ li {
     cursor: pointer;
 }
 
+#pointer {
+    cursor: pointer;
+}
+
 .container {
     padding: 10vh 1vw 0 1vw;
 }
@@ -204,7 +208,8 @@ li {
     color: darkgoldenrod;
 }
 
-.list>img {
+.list>img,
+.show-title>img {
     height: 70px;
     width: 50px;
     margin-right: 20px;
@@ -227,7 +232,7 @@ li {
 
 
 
-/*ADD SHOWS PAGES*/
+/*ADD SHOWS & MOVIES PAGES*/
 
 .show-search {
     display: flex;
@@ -237,7 +242,8 @@ li {
     margin: 0 auto;
 }
 
-.show-input-box {
+.show-input-box,
+.comment-input-box {
     margin: 0 10px;
     height: 1.5vw;
 }
@@ -319,6 +325,24 @@ li {
     margin: 10px 0;
 }
 
+.remove,
+.show-submit {
+    position: fixed;
+    top: 8vh;
+    right: 3vw;
+    background-color: black;
+    color: darkgoldenrod;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.show-title>h3 {
+    display: inline;
+    position: relative;
+    top: -25px;
+}
+
 
 /*MY SHOWS PAGE*/
 .episodes {
@@ -357,7 +381,9 @@ li {
     box-shadow: 5px 5px 5px #888888;
 }
 
-.episode>div {
+.episode-title,
+.episode-aired,
+.recaps-and-comments {
     width: 33%;
 }
 
@@ -365,7 +391,7 @@ li {
     color: darkgoldenrod;
 }
 
-.aired,
+.episode-aired,
 .recaps-and-comments,
 .complete {
     text-align: center;
@@ -377,6 +403,17 @@ li {
 }
 
 
+/*MY MOVIES PAGE*/
+.movie-info>* {
+    text-align: center;
+    display: block;
+}
+
+.movie-info>img {
+    margin: 0 auto;
+    height: 255px;
+    width: 180px;
+}
 
 /*COMMENTS*/
 
@@ -389,6 +426,10 @@ li {
     width: 70vw;
     height: 70vh;
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 
 .comment {
@@ -410,6 +451,38 @@ li {
     padding: 2px;
 }
 
+
+/*LEADERBOARD PAGE*/
+.leaderboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 5px 5px 5px 5px #888888;
+}
+
+.leaderboard>li>div {
+    width: 40vw;
+}
+
+.leader-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.row-header {
+    font-size: 5vw;
+    border-bottom: 1px solid black;
+}
+
+.row-non-header {
+    font-size: 3vw;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 4vw;
+}
 
 
 /*KEYFRAMES*/

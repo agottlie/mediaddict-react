@@ -81,7 +81,7 @@ class MyShows extends Component {
                                 <h5 className="episode-title-numbers">Episode {episode.season}.{episode.episodenumber}:</h5>
                                 <h5>{episode.name}</h5>
                             </div>
-                            <div className="aired">
+                            <div className="episode-aired">
                                 <h5>Aired:</h5>
                                 <h5>{episode.airdate.substr(0, episode.airdate.length-6)}</h5>
                             </div>
@@ -157,8 +157,11 @@ class MyShows extends Component {
 
         return (
             <div>
-                <h1>{this.props.currentShow.name}</h1>
-                <button onClick={(e) => {this.props.delete(e, "shows", this.props.currentShow.id)}}>Remove</button>
+                <div className="show-title">
+                    <img src={this.props.currentShow.image} alt=""/>
+                    <h1>{this.props.currentShow.name}</h1>
+                </div>
+                <h3 className="remove" onClick={(e) => {this.props.delete(e, "shows", this.props.currentShow.id)}}>Remove Show</h3>
                 <div className="episodes">
                     <div className="watched">
                         <h1>Watched</h1>
@@ -173,7 +176,6 @@ class MyShows extends Component {
                         <div>{upcoming}</div>
                     </div>
                 </div>
-                {this.removeHeaders}
             </div>
         );
     }

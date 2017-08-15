@@ -19,7 +19,7 @@ class App extends Component {
             show: {},
             episodeList: [],
             count: 0,
-            url: 'http://localhost:8080',
+            url: 'https://mediaddict.herokuapp.com',
             myShows: [],
             myMovies: [],
             events: [],
@@ -76,7 +76,8 @@ class App extends Component {
 
     setComments(newValue) {
         this.setState({
-            comments: newValue
+            comments: newValue,
+            searchValue: ""
         })
     }
 

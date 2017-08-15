@@ -71,8 +71,12 @@ class Episodes extends Component {
 
         return(
             <div>
+                <div className="show-title">
+                    <img src={this.props.show.image.medium} alt=""/>
+                    <h1>{this.props.show.name}</h1>
+                </div>
+                <h3 className="show-submit" onClick={(e) =>{this.props.addShow(e)}}>Add to My Shows</h3>
                 {episodeDisplay}
-                <button onClick={(e) =>{this.props.addShow(e)}}>Add</button>
             </div>
         )
     }

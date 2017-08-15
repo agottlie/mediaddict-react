@@ -35,9 +35,12 @@ class Comment extends Component {
             	<form onSubmit={this.addComment.bind(this)}>
                     <label>
                         Add Comment:
-                        <input type="text" name="name" 
+                        <textarea type="text" name="name" 
                             value={this.props.searchValue}
-                            onChange={this.props.handleNameChange.bind(this)}/>
+                            onChange={this.props.handleNameChange.bind(this)}
+                            className="comment-input-box"
+                        >
+                        </textarea>
                     </label>
                     <input type="submit" value="Submit" />
                 </form>

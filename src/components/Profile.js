@@ -36,7 +36,7 @@ class Profile extends Component {
 
     renderShows(){
         if (this.props.myShows[0]) {
-	         let watched = [],
+	        let watched = [],
 		        notWatched = [],
 	            watchedCount = 0,
                 notWatchedCount = 0;

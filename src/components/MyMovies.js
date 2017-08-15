@@ -72,22 +72,27 @@ class MyMovies extends Component {
 			status = 
 				<div>
 					<h2>Status: Not Watched</h2>
-					<h3 className="inline">Completed?</h3>
-	                <input 
-	                    type="checkbox"
-	                    onClick={(e) => {this.updateWatched()}}
-	                />
+					<div className="complete">
+						<h4>Watched?</h4>
+		                <input 
+		                    type="checkbox"
+		                    onClick={(e) => {this.updateWatched()}}
+		                />
+	                </div>
 	            </div>;
 		}
 
 		return (
-	        <div>
+	        <div className="movie-info">
+	        	<img src={this.props.currentMovie.image} alt=""/>
 	        	<h1>{this.props.currentMovie.name}</h1>
 	        	<h3>Release Date: <Moment format="MMMM D, YYYY">{this.props.currentMovie.premieredate}</Moment></h3>
 	        	<h3>Run Time: {this.props.currentMovie.length} minutes</h3>
 	        	<br />
-	        	{status}
-	        	<button onClick={(e) => {this.props.delete(e, "movies", this.props.currentMovie.id)}}>Remove</button>
+	        	<div>
+	        		{status}
+	        	</div>
+	        	<h3 className="remove" onClick={(e) => {this.props.delete(e, "movies", this.props.currentMovie.id)}}>Remove</h3>
 	        </div>
 	    );
 	}
