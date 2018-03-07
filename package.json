@@ -9,7 +9,7 @@
     "dotenv": "^4.0.0",
     "fullcalendar": "^3.4.0",
     "jquery": "^3.1.1",
-    "moment": "^2.18.1",
+    "moment": "^2.21.0",
     "moment-timezone": "^0.5.13",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
